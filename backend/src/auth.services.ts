@@ -3,7 +3,7 @@ import bcrypt from 'bcryptjs';
 import * as jwt from './utils/jwt.utils'
 import {RegisterInput, LoginInput} from './schemas/auth.schema'
 import crypto from 'crypto';
-import { error } from 'console';
+
 
 const prisma = new PrismaClient();
 

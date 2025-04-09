@@ -55,8 +55,8 @@ export default function RegisterPage() {
     <div className="container flex h-screen items-center justify-center">
       <Card className="w-full max-w-md">
         <CardHeader>
-          <CardTitle>Create an account</CardTitle>
-          <CardDescription>Enter your details below</CardDescription>
+          <CardTitle className='text-2xl'><b>Create an account</b></CardTitle>
+          {/* <CardDescription>Enter your details below</CardDescription> */}
         </CardHeader>
         <CardContent className="space-y-4">
           {/* Form */}
@@ -107,7 +107,7 @@ export default function RegisterPage() {
             </div>
 
             {/* Submit Button */}
-            <Button className="w-full" type="submit" disabled={isLoading}>
+            <Button className="w-full bg-blue-900" type="submit" disabled={isLoading}>
               {isLoading ? "Creating account..." : "Sign Up"}
             </Button>
 

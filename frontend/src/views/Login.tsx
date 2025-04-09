@@ -58,21 +58,21 @@ export default function LoginPage() {
 
   return (
     <div className="container flex h-screen items-center justify-center">
-      <Card className="w-full max-w-md">
+      <Card className="w-72 max-w-md">
         <CardHeader>
-          <CardTitle>Login</CardTitle>
-          <CardDescription>Enter your credentials to access your account</CardDescription>
+          <CardTitle className="text-2xl"><b> Welcome back !</b></CardTitle>
+          
         </CardHeader>
         <CardContent className="space-y-4">
           {/* Form */}
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             {/* Email Field */}
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              
               <Input
                 id="email"
                 type="email"
-                placeholder="Enter your email"
+                placeholder="UID"
                 {...register("email")}
                 disabled={isLoading}
               />
@@ -83,7 +83,7 @@ export default function LoginPage() {
 
             {/* Password Field */}
             <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
+              {/* <Label htmlFor="password">Password</Label> */}
               <Input
                 id="password"
                 type="password"
@@ -97,7 +97,7 @@ export default function LoginPage() {
             </div>
 
            
-            <Button className="w-full" type="submit" disabled={isLoading}>
+            <Button className="w-full bg-blue-950" type="submit" disabled={isLoading}>
               {isLoading ? "Signing in..." : "Sign In"}
             </Button>
 
