@@ -26,11 +26,12 @@ export default function LoginPage() {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm({
     resolver: zodResolver(LoginSchema),
   });
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data) => {
     try {
       setIsLoading(true);
       setError("");
@@ -47,8 +48,15 @@ export default function LoginPage() {
       // Store token in localStorage
       localStorage.setItem("accessToken", response.data.accessToken);
       console.log("Token stored, redirecting...");
+      
+      // Clear form fields
+      reset({
+        email: "",
+        password: ""
+      });
+      
       navigate("/dashboard"); // Redirect to dashboard
-    } catch (error: any) {
+    } catch (error) {
       console.error("Login failed:", error);
       setError(error.response?.data?.message || "Login failed");
     } finally {

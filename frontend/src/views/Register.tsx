@@ -23,11 +23,11 @@ export default function RegisterPage() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const { register, handleSubmit, formState: { errors } } = useForm({
+  const { register, handleSubmit, formState: { errors }, reset } = useForm({
     resolver: zodResolver(registerSchema),
   });
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data) => {
     try {
       setIsLoading(true);
       setError('');
@@ -39,6 +39,14 @@ export default function RegisterPage() {
       if (result.status === 'success') {
         console.log("Registered Successfully:", result);
         alert("User Registered Successfully");
+        
+        // Clear the form fields
+        reset({
+          name: "",
+          email: "",
+          password: ""
+        });
+        
         navigate('/login'); // Redirect to login page
       } else {
         alert("There was an error while registering the user");
