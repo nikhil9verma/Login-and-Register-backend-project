@@ -34,42 +34,6 @@ A modern full-stack authentication system with React, Shadcn UI, and Express.
 - Zod for schema validation
 - TypeScript
 
-## Project Structure
-
-project/
-├── frontend/
-│ ├── src/
-│ │ ├── components/
-│ │ │ └── ui/ # Shadcn UI components
-│ │ ├── views/
-│ │ │ ├── Login.tsx # Login page
-│ │ │ └── Register.tsx # Registration page
-│ │ ├── services/
-│ │ │ └── api.ts # Axios instance for API requests
-│ │ ├── App.tsx # Main application with routes
-│ │ └── main.tsx # Entry point
-│ ├── package.json
-│ └── vite.config.ts
-│
-├── backend/
-│ ├── src/
-│ │ ├── controller/
-│ │ │ └── auth.controllers.ts # Authentication controllers
-│ │ ├── routes/
-│ │ │ └── auth.routes.ts # Authentication routes
-│ │ ├── schemas/
-│ │ │ └── auth.schema.ts # Validation schemas
-│ │ ├── services/
-│ │ │ └── auth.services.ts # Authentication services
-│ │ ├── utils/
-│ │ │ └── jwt.utils.ts # JWT utilities
-│ │ └── index.ts # Entry point
-│ ├── prisma/
-│ │ └── schema.prisma # Database schema
-│ └── package.json
-
-text
-
 ## Getting Started
 
 ### Prerequisites
